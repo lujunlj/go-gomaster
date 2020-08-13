@@ -1,8 +1,8 @@
 # mysql connect configuration
 mysql:
-    username: sgnbs
-    password: 'Chinavnet.1'
-    path: '192.168.11.199:3306'
+    username: root
+    password: 'mysql'
+    path: '192.168.11.14:3306'
     db-name: 'imooc'
     config: 'charset=utf8&parseTime=True&loc=Local'
     max-idle-conns: 10
