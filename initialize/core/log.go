@@ -21,13 +21,15 @@ const (
 )
 
 var (
-	defaultFormatter = `%{time:2006/01/02 - 15:04:05.000} %{longfile} %{color:bold}▶ [%{level:.6s}] %{message}%{color:reset}`
+	//defaultFormatter = `%{time:2006/01/02 - 15:04:05.000} %{longfile} %{color:bold}▶ [%{level:.6s}] %{message}%{color:reset}`
+	defaultFormatter = `%{time:2006/01/02 - 15:04:05} %{longfile} %{color:bold}▶ [%{level:.6s}] %{message}%{color:reset}`
 )
-type LogStarter struct{
+
+type LogStarter struct {
 	infra.BaseStarter
 }
 
-func (l *LogStarter) Init(ctx infra.StarterContext){
+func (l *LogStarter) Init(ctx infra.StarterContext) {
 	initLog()
 }
 

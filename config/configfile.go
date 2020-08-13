@@ -1,9 +1,10 @@
 package config
 
 type Server struct {
-	Mysql   Mysql   `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
-	Log     Log     `mapstructure:"log" json:"log" yaml:"log"`
-	System  System  `mapstructure:"system" json:"system" yaml:"system"`
+	Mysql  Mysql  `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
+	Log    Log    `mapstructure:"log" json:"log" yaml:"log"`
+	System System `mapstructure:"system" json:"system" yaml:"system"`
+	Upload Upload `mapstructure:"upload" json:"upload" yaml:"upload"`
 }
 type Mysql struct {
 	Username     string `mapstructure:"username" json:"username" yaml:"username"`
@@ -28,4 +29,8 @@ type System struct {
 	Env           string `mapstructure:"env" json:"env" yaml:"env"`
 	Addr          int    `mapstructure:"addr" json:"addr" yaml:"addr"`
 	DbType        string `mapstructure:"db-type" json:"dbType" yaml:"db-type"`
+}
+
+type Upload struct {
+	Path string `mapstructure:"path" json:"path" yaml:"path"`
 }

@@ -1,0 +1,22 @@
+[GO-Master]2020/08/13 - 14:33:48.802 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:16 ▶ [DEBUG] use middleware logger
+[GO-Master]2020/08/13 - 14:33:48.803 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:19 ▶ [DEBUG] use middleware cors
+[GO-Master]2020/08/13 - 14:33:48.803 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:21 ▶ [DEBUG] register swagger handler
+[GO-Master]2020/08/13 - 14:33:48.803 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:25 ▶ [INFO] router register success
+[GO-Master]2020/08/13 - 14:56:33.673 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:16 ▶ [DEBUG] use middleware logger
+[GO-Master]2020/08/13 - 14:56:33.673 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:19 ▶ [DEBUG] use middleware cors
+[GO-Master]2020/08/13 - 14:56:33.674 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:21 ▶ [DEBUG] register swagger handler
+[GO-Master]2020/08/13 - 14:56:33.674 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:26 ▶ [INFO] router register success
+[GO-Master]2020/08/13 - 15:00:03.357 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/api/v1/uploadfile.go:23 ▶ [ERROR] 文件创建失败!
+[GO-Master]2020/08/13 - 15:49:15.887 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/api/v1/uploadfile.go:23 ▶ [ERROR] 文件创建失败!
+[GO-Master]2020/08/13 - 17:04:26 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:16 ▶ [DEBUG] use middleware logger
+[GO-Master]2020/08/13 - 17:04:26 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:19 ▶ [DEBUG] use middleware cors
+[GO-Master]2020/08/13 - 17:04:26 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:21 ▶ [DEBUG] register swagger handler
+[GO-Master]2020/08/13 - 17:04:26 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:26 ▶ [INFO] router register success
+[GO-Master]2020/08/13 - 17:05:25 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:16 ▶ [DEBUG] use middleware logger
+[GO-Master]2020/08/13 - 17:05:25 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:19 ▶ [DEBUG] use middleware cors
+[GO-Master]2020/08/13 - 17:05:25 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:21 ▶ [DEBUG] register swagger handler
+[GO-Master]2020/08/13 - 17:05:25 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:26 ▶ [INFO] router register success
+[GO-Master]2020/08/13 - 17:23:13 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:16 ▶ [DEBUG] use middleware logger
+[GO-Master]2020/08/13 - 17:23:13 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:19 ▶ [DEBUG] use middleware cors
+[GO-Master]2020/08/13 - 17:23:13 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:21 ▶ [DEBUG] register swagger handler
+[GO-Master]2020/08/13 - 17:23:13 /home/lujun/IdeaProjects/go/learn/demo/go-gomaster/initialize/core/router.go:26 ▶ [INFO] router register success

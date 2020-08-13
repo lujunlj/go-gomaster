@@ -11,7 +11,7 @@ import (
 )
 
 //初始化总路由
-func Routers(g *gin.Engine ) {
+func Routers(g *gin.Engine) {
 	//Router.Use(middleware.LoadTls())  // 打开就能玩https了
 	common.Log().Debug("use middleware logger")
 	// 跨域
@@ -20,7 +20,8 @@ func Routers(g *gin.Engine ) {
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	common.Log().Debug("register swagger handler")
 	// 方便统一添加路由组前缀 多服务器上线使用
-	ApiGroup := g.Group("")
-	router.InitProductRouter(ApiGroup)                  // 产品路由
+	ApiGroup := g.Group("")               //根路径
+	router.InitProductRouter(ApiGroup)    // 产品路由
+	router.InitUploadFileRouter(ApiGroup) // 文件上传
 	common.Log().Info("router register success")
 }

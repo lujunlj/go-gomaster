@@ -31,8 +31,7 @@ require (
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.6
 	github.com/tebeka/strftime v0.1.5 // indirect
-	golang.org/x/net v0.0.0-20200520182314-0ba52f642ac2 // indirect
 	golang.org/x/sys v0.0.0-20200523222454-059865788121 // indirect
-	golang.org/x/tools v0.0.0-20200522201501-cb1345f3a375 // indirect
+	golang.org/x/tools v0.0.0-20200812231640-9176cd30088c // indirect
 	gopkg.in/ini.v1 v1.56.0 // indirect
 )
