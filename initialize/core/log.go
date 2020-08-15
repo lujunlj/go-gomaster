@@ -2,8 +2,6 @@ package core
 
 import (
 	"fmt"
-	rotatelogs "github.com/lestrrat/go-file-rotatelogs"
-	oplogging "github.com/op/go-logging"
 	"gomaster/common"
 	"gomaster/config"
 	infra "gomaster/initialize"
@@ -12,6 +10,11 @@ import (
 	"os"
 	"strings"
 	"time"
+
+	"github.com/gin-gonic/gin"
+
+	rotatelogs "github.com/lestrrat/go-file-rotatelogs"
+	oplogging "github.com/op/go-logging"
 )
 
 const (
@@ -40,26 +43,26 @@ func initLog() {
 	}
 	logger := oplogging.MustGetLogger(module)
 	var backends []oplogging.Backend
-	backends = registerStdout(c, backends)
-	backends = registerFile(c, backends)
-
+	registerStdout(c, &backends)
+	if fileWriter := registerFile(c, &backends); fileWriter != nil {
+		// 如果需要将日志同时写入文件和控制台，请使用以下代码
+		gin.DefaultWriter = io.MultiWriter(fileWriter, os.Stdout)
+	}
 	oplogging.SetBackend(backends...)
 	common.Set_LOG(logger)
 }
 
-func registerStdout(c config.Log, backends []oplogging.Backend) []oplogging.Backend {
+func registerStdout(c config.Log, backends *[]oplogging.Backend) {
 	if c.Stdout != "" {
 		level, err := oplogging.LogLevel(c.Stdout)
 		if err != nil {
 			fmt.Println(err)
 		}
-		backends = append(backends, createBackend(os.Stdout, c, level))
+		*backends = append(*backends, createBackend(os.Stdout, c, level))
 	}
-
-	return backends
 }
 
-func registerFile(c config.Log, backends []oplogging.Backend) []oplogging.Backend {
+func registerFile(c config.Log, backends *[]oplogging.Backend) io.Writer {
 	if c.File != "" {
 		if ok, _ := utils.PathExists(logDir); !ok {
 			// directory not exist
@@ -77,16 +80,16 @@ func registerFile(c config.Log, backends []oplogging.Backend) []oplogging.Backen
 		)
 		if err != nil {
 			fmt.Println(err)
-			return backends
 		}
 		level, err := oplogging.LogLevel(c.File)
 		if err != nil {
 			fmt.Println(err)
 		}
-		backends = append(backends, createBackend(fileWriter, c, level))
+		*backends = append(*backends, createBackend(fileWriter, c, level))
+		return fileWriter
 	}
 
-	return backends
+	return nil
 }
 
 func createBackend(w io.Writer, c config.Log, level oplogging.Level) oplogging.Backend {

@@ -2,14 +2,15 @@ package core
 
 import (
 	"fmt"
-	"github.com/fsnotify/fsnotify"
-	"github.com/spf13/viper"
 	"gomaster/common"
 	"gomaster/initialize"
 	"os"
+
+	"github.com/fsnotify/fsnotify"
+	"github.com/spf13/viper"
 )
 
-const defaultConfigFile = "config.yaml"
+const defaultConfigFile = "config.yml"
 
 type PropsStarter struct {
 	initialize.BaseStarter
@@ -20,21 +21,21 @@ func (p *PropsStarter) Init(ctx initialize.StarterContext) {
 	v := viper.New()
 	v.SetConfigFile(defaultConfigFile)
 	err := v.ReadInConfig()
-	if err != nil{
-		panic(fmt.Errorf("Fatal config file : %s \n",err))
+	if err != nil {
+		panic(fmt.Errorf("Fatal config file : %s \n", err))
 		os.Exit(0)
 	}
 	v.WatchConfig()
 
 	conf := common.Conf()
-	v.OnConfigChange(func(in fsnotify.Event){
+	v.OnConfigChange(func(in fsnotify.Event) {
 		fmt.Println("config file changed:", in.Name)
 		if err := v.Unmarshal(&conf); err != nil {
 			fmt.Println(err)
 		}
 	})
 
-	if err := v.Unmarshal(&conf); err!= nil{
+	if err := v.Unmarshal(&conf); err != nil {
 		fmt.Println(err)
 	}
 	common.Set_VP(v)
